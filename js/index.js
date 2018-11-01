@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', function () {
   //model
   let popupEngineer = document.getElementsByClassName('popup_engineer')[0],
       body = document.querySelector('body'),
-    popupEngineerBtn = document.getElementsByClassName('popup_engineer_btn'),
+    popup = document.getElementsByClassName('popup'),
     popupClose = document.getElementsByClassName('popup_close')[1];
   
     
@@ -15,18 +15,27 @@ window.addEventListener('DOMContentLoaded', function () {
       
   body.addEventListener('click', function (e) {
     let target = e.target;
-    
+    // popup_engineer_btn
     if (target.classList.contains('popup_engineer_btn')) {
       
       popupEngineer.style.display = 'block';
 
     }
-    
     if (target.classList.contains('popup_engineer')) {
       popupEngineer.style.display = 'none';
      
     }
-   
+   // popup
+    
+    if (target.classList.contains('phone_link')) {
+
+      popupEngineer.style.display = 'block';
+
+    }
+    if (target.classList.contains('popup_engineer')) {
+      popupEngineer.style.display = 'none';
+
+    }
   });
     
  
