@@ -9,16 +9,19 @@ window.addEventListener('DOMContentLoaded', function () {
   
     
   popupClose.addEventListener('click', function (e) {
+    e.preventDefault();
     popupEngineer.style.display = 'none';
     
   });
   popup.addEventListener('click', function (e) {
+    e.preventDefault();
     popup.style.display = 'none';
 
   });
       
   body.addEventListener('click', function (e) {
     let target = e.target;
+    e.preventDefault();
     // popup_engineer_btn
     if (target.classList.contains('popup_engineer_btn')) {
       
