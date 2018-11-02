@@ -4,13 +4,17 @@ window.addEventListener('DOMContentLoaded', function () {
   //model
   let popupEngineer = document.getElementsByClassName('popup_engineer')[0],
       body = document.querySelector('body'),
-    popup = document.getElementsByClassName('popup'),
+    popup = document.getElementsByClassName('popup')[0],
     popupClose = document.getElementsByClassName('popup_close')[1];
   
     
   popupClose.addEventListener('click', function (e) {
     popupEngineer.style.display = 'none';
-    console.log('sdsd');
+    
+  });
+  popup.addEventListener('click', function (e) {
+    popup.style.display = 'none';
+
   });
       
   body.addEventListener('click', function (e) {
@@ -29,12 +33,15 @@ window.addEventListener('DOMContentLoaded', function () {
     
     if (target.classList.contains('phone_link')) {
 
-      popupEngineer.style.display = 'block';
+      popup.style.display = 'block';
 
     }
-    if (target.classList.contains('popup_engineer')) {
-      popupEngineer.style.display = 'none';
+    if (target.classList.contains('popup_close')) {
+      popup.style.display = 'none';
 
+    }
+    if (target.classList.contains('phone_link')) {
+      
     }
   });
     
