@@ -1,26 +1,25 @@
-//window.addEventListener('load')
-window.addEventListener('DOMContentLoaded', function () {
-  'use strict';
+function modal() {
   //model
   let popupEngineer = document.getElementsByClassName('popup_engineer')[0],
       body = document.querySelector('body'),
     popup = document.getElementsByClassName('popup')[0],
     popupClose = document.getElementsByClassName('popup_close')[1];
+    popupClosE = document.getElementsByClassName('popup_close')[0];
   
     
   popupClose.addEventListener('click', function (e) {
     e.preventDefault();
     popupEngineer.style.display = 'none';
     document.body.style.overflow = '';
-    
+    console.log('12');
   });
-  popup.addEventListener('click', function (e) {
+  popupClosE.addEventListener('click', function (e) {
     e.preventDefault();
     popup.style.display = 'none';
     document.body.style.overflow = '';
+    console.log('1');
 
-
-  });
+  }); 
 
  
   body.addEventListener('click', function (e) {
@@ -48,10 +47,14 @@ window.addEventListener('DOMContentLoaded', function () {
     if (target.classList.contains('popup_close')) {
       popup.style.display = 'none';
       document.body.style.overflow = '';
-
+      console.log('123');
+    }
+    if (target.classList.contains('popup')) {
+      popup.style.display = 'none';
+      document.body.style.overflow = '';
+      console.log('123');
     }
     
   });
-    
- 
-});
+}
+module.exports = modal;
