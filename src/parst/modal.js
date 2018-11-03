@@ -11,13 +11,13 @@ function modal() {
     e.preventDefault();
     popupEngineer.style.display = 'none';
     document.body.style.overflow = '';
-    console.log('12');
+   
   });
   popupClosE.addEventListener('click', function (e) {
     e.preventDefault();
     popup.style.display = 'none';
     document.body.style.overflow = '';
-    console.log('1');
+    
 
   }); 
 
@@ -35,7 +35,7 @@ function modal() {
     if (target.classList.contains('popup_engineer')) {
       popupEngineer.style.display = 'none';
       document.body.style.overflow = '';
-      console.log('sd');
+      
     }
    // popup
     
@@ -47,14 +47,21 @@ function modal() {
     if (target.classList.contains('popup_close')) {
       popup.style.display = 'none';
       document.body.style.overflow = '';
-      console.log('123');
+      
     }
     if (target.classList.contains('popup')) {
       popup.style.display = 'none';
       document.body.style.overflow = '';
-      console.log('123');
+      
     }
     
   });
+  //60sec
+  function func() {
+    popup.style.display = 'block';
+  }
+
+  setTimeout(func, 60000);
+ 
 }
 module.exports = modal;
