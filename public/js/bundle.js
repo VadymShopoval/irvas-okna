@@ -97,7 +97,8 @@
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
-  var modal = __webpack_require__(/*! ./parst/modal.js */ "./parst/modal.js"); //tabs = require("./parst/tabs.js");
+  var modal = __webpack_require__(/*! ./parst/modal.js */ "./parst/modal.js"),
+      timer = __webpack_require__(/*! ./parst/timer.js */ "./parst/timer.js"); //tabs = require("./parst/tabs.js");
 
   /* form  = require("./parst/form.js"),
   slider = require("./parst/slider.js"),
@@ -109,12 +110,13 @@ window.addEventListener('DOMContentLoaded', function () {
   
   slider();
   
-  timer();
+  
   calc();  */
   //form();
 
 
-  modal(); //tabs();
+  modal();
+  timer(); //tabs();
 });
 
 /***/ }),
@@ -182,6 +184,67 @@ function modal() {
 }
 
 module.exports = modal;
+
+/***/ }),
+
+/***/ "./parst/timer.js":
+/*!************************!*\
+  !*** ./parst/timer.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function timer() {
+  //timer
+  var deadline = '2019-07-04';
+
+  function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date()),
+        // Math.floor округля
+    seconds = Math.floor(t / 1000 % 60),
+        minutes = Math.floor(t / 1000 / 60 % 60),
+        hours = Math.floor(t / (1000 * 60 * 60)),
+        //  hour = Math.floor((t / 1000 / 60/60) % 24),
+    d = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+      'day': d,
+      'total': t,
+      'hours': hours,
+      'minutes': minutes,
+      'seconds': seconds
+    };
+  }
+
+  function setClock(id, endtime) {
+    var timer = document.getElementById(id),
+        day = timer.querySelector('.day'),
+        hours = timer.querySelector('.hours'),
+        minutes = timer.querySelector('.minutes'),
+        seconds = timer.querySelector('.seconds'),
+        timeInterval = setInterval(updateClock, 1000);
+
+    function updateClock() {
+      var t = getTimeRemaining(endtime);
+      day.textContent = ('0' + t.day).slice(-2);
+      hours.textContent = ('0' + t.hours).slice(-2);
+      minutes.textContent = ('0' + t.minutes).slice(-2);
+      seconds.textContent = ('0' + t.seconds).slice(-2);
+
+      if (t.total <= 0) {
+        console.log('t.total<= 0');
+        clearInterval(timeInterval);
+        day.textContent = '00';
+        hours.textContent = '00';
+        minutes.textContent = '00';
+        seconds.textContent = '00';
+      }
+    }
+  }
+
+  setClock('timer', deadline);
+}
+
+module.exports = timer;
 
 /***/ })
 
