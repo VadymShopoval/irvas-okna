@@ -98,9 +98,10 @@ window.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
   var modal = __webpack_require__(/*! ./parst/modal.js */ "./parst/modal.js"),
+      form = __webpack_require__(/*! ./parst/form.js */ "./parst/form.js"),
       timer = __webpack_require__(/*! ./parst/timer.js */ "./parst/timer.js"); //tabs = require("./parst/tabs.js");
 
-  /* form  = require("./parst/form.js"),
+  /* 
   slider = require("./parst/slider.js"),
   
   timer  = require("./parst/timer.js"),
@@ -112,12 +113,98 @@ window.addEventListener('DOMContentLoaded', function () {
   
   
   calc();  */
-  //form();
 
 
+  form();
   modal();
   timer(); //tabs();
 });
+
+/***/ }),
+
+/***/ "./parst/form.js":
+/*!***********************!*\
+  !*** ./parst/form.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function form() {
+  var form1 = document.getElementById('form1'),
+      form2 = document.getElementById('form2'),
+      form3 = document.getElementById('form3'),
+      form4 = document.getElementById('form4'),
+      form5 = document.getElementById('form5'),
+      form6 = document.getElementById('form6'),
+      form7 = document.getElementById('form7'),
+      form8 = document.getElementById('form8'),
+      form9 = document.getElementById('form9'),
+      inputName = document.getElementsByName('user_name'),
+      inputPhone = document.getElementsByName('user_phone');
+  /* inputPhone.addEventListener('input', () => {
+    for (let i = 0; i < inputPhone.length; i++) {
+      
+      inputPhone[i].value = inputPhone[i].value.replace(/[^0-9+]/ig, '');
+    }
+  }); */
+
+  var sendRequest = function sendRequest(target) {
+    var message = {
+      loading: "Загрузка....",
+      success: "Спасибо! Скоро мы с вами свяжемся!",
+      failure: "Что-то пошло не так..."
+    },
+        statusMessage = document.createElement('div');
+    statusMessage.classList.add('status');
+    var input = target.getElementsByTagName('input'),
+        request = new XMLHttpRequest();
+    request.open('POST', 'server.php');
+    request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    var formData = new FormData(target),
+        obj = {};
+    formData.forEach(function (value, key) {
+      obj[key] = value;
+    });
+    var json = JSON.stringify(obj);
+    request.send(json);
+    target.appendChild(statusMessage);
+
+    request.onreadystatechange = function () {
+      if (request.readyState < 4) {
+        statusMessage.innerHTML = message.loading;
+      } else if (request.readyState === 4 && request.status === 200) {
+        statusMessage.innerHTML = message.success;
+      } else {
+        statusMessage.innerHTML = message.failure;
+      }
+    };
+
+    for (var i = 0; i < input.length; i++) {
+      input[i].value = '';
+    }
+  };
+
+  var body = document.querySelector('body');
+  body.addEventListener('input', function (e) {
+    var target = e.target;
+
+    if (target.classList.contains('Phone')) {
+      //console.log('inputPhone');
+      target.value = target.value.replace(/[^0-9+]/ig, '');
+    }
+  });
+  body.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var target = e.target;
+
+    if (target.id == 'form1' || target.id == 'form3' || target.id == 'form2' || target.id == 'form4' || target.id == 'form5' || target.id == 'form6' || target.id == 'form7' || target.id == 'form8' || target.id == 'form9') {
+      console.log('ss');
+      sendRequest(target);
+    }
+  });
+}
+
+module.exports = form;
 
 /***/ }),
 
@@ -132,22 +219,15 @@ function modal() {
   //model
   var popupEngineer = document.getElementsByClassName('popup_engineer')[0],
       body = document.querySelector('body'),
-      popup = document.getElementsByClassName('popup')[0],
-      popupClose = document.getElementsByClassName('popup_close')[1];
-  popupClosE = document.getElementsByClassName('popup_close')[0];
-  popupClose.addEventListener('click', function (e) {
-    e.preventDefault();
-    popupEngineer.style.display = 'none';
-    document.body.style.overflow = '';
-  });
-  popupClosE.addEventListener('click', function (e) {
-    e.preventDefault();
-    popup.style.display = 'none';
-    document.body.style.overflow = '';
-  });
+      bntclose = document.getElementsByTagName('strong')[1],
+      bntclose0 = document.getElementsByTagName('strong')[0],
+      btn = document.querySelectorAll('.popup_engineer')[0],
+      popup = document.querySelector('.popup');
+  popupDialog = document.querySelector('.popup_dialog');
+  console.log('123');
+  console.log(popup);
   body.addEventListener('click', function (e) {
-    var target = e.target;
-    e.preventDefault(); // popup_engineer_btn
+    var target = e.target; // popup_engineer_btn
 
     if (target.classList.contains('popup_engineer_btn')) {
       popupEngineer.style.display = 'block';
@@ -161,18 +241,22 @@ function modal() {
 
 
     if (target.classList.contains('phone_link')) {
+      e.preventDefault();
       document.body.style.overflow = 'hidden';
       popup.style.display = 'block';
-    }
-
-    if (target.classList.contains('popup_close')) {
-      popup.style.display = 'none';
-      document.body.style.overflow = '';
     }
 
     if (target.classList.contains('popup')) {
       popup.style.display = 'none';
       document.body.style.overflow = '';
+      popupEngineer.style.display = 'none';
+    }
+
+    if (target == bntclose0 || target == bntclose) {
+      console.log(bntclose);
+      popup.style.display = 'none';
+      document.body.style.overflow = '';
+      btn.style.display = "none";
     }
   }); //60sec
 
@@ -196,7 +280,7 @@ module.exports = modal;
 
 function timer() {
   //timer
-  var deadline = '2019-07-04';
+  var deadline = '2018-11-07';
 
   function getTimeRemaining(endtime) {
     var t = Date.parse(endtime) - Date.parse(new Date()),

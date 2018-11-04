@@ -2,9 +2,10 @@
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
   let modal = require("./parst/modal.js"),
+      form = require("./parst/form.js"),
       timer = require("./parst/timer.js");
       //tabs = require("./parst/tabs.js");
-    /* form  = require("./parst/form.js"),
+    /* 
     slider = require("./parst/slider.js"),
     
     timer  = require("./parst/timer.js"),
@@ -18,7 +19,7 @@ window.addEventListener('DOMContentLoaded', function () {
   
   
   calc();  */
-  //form();
+  form();
   modal();
   timer();
   //tabs();

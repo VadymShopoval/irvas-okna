@@ -2,29 +2,20 @@ function modal() {
   //model
   let popupEngineer = document.getElementsByClassName('popup_engineer')[0],
       body = document.querySelector('body'),
-    popup = document.getElementsByClassName('popup')[0],
-    popupClose = document.getElementsByClassName('popup_close')[1];
-    popupClosE = document.getElementsByClassName('popup_close')[0];
+      bntclose = document.getElementsByTagName('strong')[1],
+      bntclose0 = document.getElementsByTagName('strong')[0],
+      btn = document.querySelectorAll('.popup_engineer')[0],
+    popup = document.querySelector('.popup');
+    popupDialog = document.querySelector('.popup_dialog');
+    
   
-    
-  popupClose.addEventListener('click', function (e) {
-    e.preventDefault();
-    popupEngineer.style.display = 'none';
-    document.body.style.overflow = '';
-   
-  });
-  popupClosE.addEventListener('click', function (e) {
-    e.preventDefault();
-    popup.style.display = 'none';
-    document.body.style.overflow = '';
-    
-
-  }); 
+   console.log('123');
+  console.log(popup);
 
  
   body.addEventListener('click', function (e) {
     let target = e.target;
-    e.preventDefault();
+    
     // popup_engineer_btn
     if (target.classList.contains('popup_engineer_btn')) {
       
@@ -40,19 +31,25 @@ function modal() {
    // popup
     
     if (target.classList.contains('phone_link')) {
+      e.preventDefault();
       document.body.style.overflow = 'hidden';
       popup.style.display = 'block';
 
     }
-    if (target.classList.contains('popup_close')) {
-      popup.style.display = 'none';
-      document.body.style.overflow = '';
-      
-    }
+
     if (target.classList.contains('popup')) {
       popup.style.display = 'none';
       document.body.style.overflow = '';
+       
+      popupEngineer.style.display = 'none';
       
+    }
+    if (target == bntclose0 || (target == bntclose)) {
+      console.log(bntclose);
+      popup.style.display = 'none';
+      document.body.style.overflow = '';
+      btn.style.display = "none";
+    
     }
     
   });
