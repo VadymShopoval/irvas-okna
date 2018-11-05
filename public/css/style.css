@@ -895,9 +895,8 @@ textarea:focus {
   display: none;
   position: fixed;
   top: 100px;
-  left: 30%;
-  -webkit-transform: translateX(-30%);
-  transform: translateX(-30%);
+  
+  margin-left: 31%;
   width: 55%;
   height: 75%;
   z-index: 7;
