@@ -57,18 +57,106 @@ function modal() {
     
     }
     //lupaclass="lupa1"
+   let blockID; 
     if (target.classList.contains('lupa1')) {
       e.preventDefault();
       console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/1.png) no-repeat";
+
+     /*  blockID =target.getAttribute('src');
+      addBg(blockID);
+      console.log(blockID);
+      div.style.cssText = ` background: url(${blockID})`;
+      console.log(div); */
       addBg();
     }
+    if (target.classList.contains('lupa1')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/1.png) no-repeat";
+
+      /*  blockID =target.getAttribute('src');
+       addBg(blockID);
+       console.log(blockID);
+       div.style.cssText = ` background: url(${blockID})`;
+       console.log(div); */
+      addBg();
+    }
+    if (target.classList.contains('cl0')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/1.png) no-repeat";
+
+      /*  blockID =target.getAttribute('src');
+       addBg(blockID);
+       console.log(blockID);
+       div.style.cssText = ` background: url(${blockID})`;
+       console.log(div); */
+      addBg();
+    }
+    if (target.classList.contains('cl0')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/1.png) no-repeat";
+      addBg();
+    }
+    if (target.classList.contains('cl1')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/2.png) no-repeat";
+      addBg();
+    }
+    if (target.classList.contains('cl2')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/3.png) no-repeat";
+      addBg();
+    }
+    if (target.classList.contains('cl3')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/4.png) no-repeat";
+      addBg();
+    }
+    if (target.classList.contains('cl4')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/5.png) no-repeat";
+      addBg();
+    }
+    if (target.classList.contains('cl5')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/6.png) no-repeat";
+      addBg();
+    }
+    if (target.classList.contains('cl6')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/7.png) no-repeat";
+      addBg();
+    }
+    if (target.classList.contains('cl7')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/8.png) no-repeat";
+      addBg();
+    }
+
+
+
+
     if (target.classList.contains('bg23') || target.classList.contains('bg2')) {
-      console.log(target)
+      
       noneBg();
     }
   });
   function addBg() {
-    div.style.background = "url(img/our_works/big_img/1.png) no-repeat";
+    
+    
+     
+    
+    // 
     div.style.display ='block';
     bg23.style.display = 'block';
   }

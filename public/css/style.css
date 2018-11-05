@@ -894,11 +894,12 @@ textarea:focus {
 .bg2 {
   display: none;
   position: fixed;
-  top: 25%;
-  left: 25%;
-  
-  width: 100%;
-  height: 100%;
+  top: 100px;
+  left: 30%;
+  -webkit-transform: translateX(-30%);
+  transform: translateX(-30%);
+  width: 55%;
+  height: 75%;
   z-index: 7;
   background-color: rgba(0, 0, 0, 0.8);
   
