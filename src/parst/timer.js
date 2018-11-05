@@ -7,8 +7,8 @@ function timer() {
       // Math.floor округля
       seconds = Math.floor((t / 1000) % 60),
       minutes = Math.floor((t / 1000 / 60) % 60),
-      hours = Math.floor((t / (1000 * 60 * 60))),
-    //  hour = Math.floor((t / 1000 / 60/60) % 24),
+      //hours = Math.floor((t / (1000 * 60 * 60))),
+      hours = Math.floor( (t /( 1000 * 60*60)) % 24),
       d = Math.floor((t / (1000 * 60 * 60*24)));
     return {
       'day' : d,

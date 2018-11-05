@@ -5,8 +5,8 @@ function tabs() {
   function hideTabContent(a) {
     for (let i = a; i < tabContent.length; i++) {
       console.log(tabContent[i]);
-      tabContent[i].classList.remove('show');
-      tabContent[i].classList.add('hide');
+      tabContent[i].style.display = "none";
+      
     }
   }
   hideTabContent(1);
@@ -18,21 +18,23 @@ function tabs() {
 
     }
   }
-  info.addEventListener('click', function(event){
-    let target =event.target;
-    console.log(target);
-    if (target && target.classList.contains('info-header-tab')) {
-      for (let i = 0; i < tab.length; i++) {
-        console.log(tab);
-        if (target == tab[i]) {
-          console.log(tab[i]);
-          console.log(target);
-          hideTabContent(0);
-          showTabContent(i);
-          break;
-        }
-      }
+  
+  document.body.addEventListener('click', function (e) {
+    let target = e.target;
+
+    //
+    if (target.classList.contains('external_link')) {
+      console.log('tab');
+      showTabContent(2);
+       
     }
-  });
+    if(target.classList.contains('internal_link')) {
+      console.log('tab1');
+      showTabContent(3);
+      
+    
+      
+    } 
+  })
 }
 module.exports = tabs;

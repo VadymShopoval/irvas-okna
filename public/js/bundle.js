@@ -99,8 +99,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
   var modal = __webpack_require__(/*! ./parst/modal.js */ "./parst/modal.js"),
       form = __webpack_require__(/*! ./parst/form.js */ "./parst/form.js"),
-      timer = __webpack_require__(/*! ./parst/timer.js */ "./parst/timer.js"); //tabs = require("./parst/tabs.js");
-
+      timer = __webpack_require__(/*! ./parst/timer.js */ "./parst/timer.js"),
+      tabs = __webpack_require__(/*! ./parst/tabs.js */ "./parst/tabs.js");
   /* 
   slider = require("./parst/slider.js"),
   
@@ -117,7 +117,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
   form();
   modal();
-  timer(); //tabs();
+  timer();
+  tabs();
 });
 
 /***/ }),
@@ -222,11 +223,13 @@ function modal() {
       bntclose = document.getElementsByTagName('strong')[1],
       bntclose0 = document.getElementsByTagName('strong')[0],
       btn = document.querySelectorAll('.popup_engineer')[0],
-      popup = document.querySelector('.popup');
-  popupDialog = document.querySelector('.popup_dialog');
-  console.log('123');
-  console.log(popup);
-  body.addEventListener('click', function (e) {
+      popup = document.querySelector('.popup'),
+      lupa = document.querySelector('.lupa');
+  bg23 = document.querySelector('.bg23');
+  lupa0 = document.querySelectorAll('.lupa')[0], popupDialog = document.querySelector('.popup_dialog'), imgclose = document.querySelector('.bg2'), div = document.createElement('div');
+  div.classList.add('bg2');
+  bg23.appendChild(div);
+  document.body.addEventListener('click', function (e) {
     var target = e.target; // popup_engineer_btn
 
     if (target.classList.contains('popup_engineer_btn')) {
@@ -257,8 +260,33 @@ function modal() {
       popup.style.display = 'none';
       document.body.style.overflow = '';
       btn.style.display = "none";
+    } //lupaclass="lupa1"
+
+
+    if (target.classList.contains('lupa1')) {
+      e.preventDefault();
+      console.log('lupa');
+      addBg();
     }
-  }); //60sec
+
+    if (target.classList.contains('bg23') || target.classList.contains('bg2')) {
+      console.log(target);
+      noneBg();
+    }
+  });
+
+  function addBg() {
+    div.style.background = "url(img/our_works/big_img/1.png) no-repeat";
+    div.style.display = 'block';
+    bg23.style.display = 'block';
+  }
+
+  function noneBg() {
+    div.style.background = "none";
+    div.style.display = 'none';
+    bg23.style.display = 'none';
+  } //60sec
+
 
   function func() {
     popup.style.display = 'block';
@@ -268,6 +296,54 @@ function modal() {
 }
 
 module.exports = modal;
+
+/***/ }),
+
+/***/ "./parst/tabs.js":
+/*!***********************!*\
+  !*** ./parst/tabs.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function tabs() {
+  var tab = document.querySelectorAll('.glazing_slider'),
+      info = document.querySelector('.glazing_block'),
+      tabContent = document.querySelectorAll('.glazing_cold');
+
+  function hideTabContent(a) {
+    for (var i = a; i < tabContent.length; i++) {
+      console.log(tabContent[i]);
+      tabContent[i].style.display = "none";
+    }
+  }
+
+  hideTabContent(1);
+
+  function showTabContent(b) {
+    if (tabContent[b].classList.contains('hide')) {
+      console.log(tabContent[b]);
+      tabContent[b].classList.remove('hide');
+      tabContent[b].classList.add('show');
+    }
+  }
+
+  document.body.addEventListener('click', function (e) {
+    var target = e.target; //
+
+    if (target.classList.contains('external_link')) {
+      console.log('tab');
+      showTabContent(2);
+    }
+
+    if (target.classList.contains('internal_link')) {
+      console.log('tab1');
+      showTabContent(3);
+    }
+  });
+}
+
+module.exports = tabs;
 
 /***/ }),
 
@@ -287,9 +363,9 @@ function timer() {
         // Math.floor округля
     seconds = Math.floor(t / 1000 % 60),
         minutes = Math.floor(t / 1000 / 60 % 60),
-        hours = Math.floor(t / (1000 * 60 * 60)),
-        //  hour = Math.floor((t / 1000 / 60/60) % 24),
-    d = Math.floor(t / (1000 * 60 * 60 * 24));
+        //hours = Math.floor((t / (1000 * 60 * 60))),
+    hours = Math.floor(t / (1000 * 60 * 60) % 24),
+        d = Math.floor(t / (1000 * 60 * 60 * 24));
     return {
       'day': d,
       'total': t,

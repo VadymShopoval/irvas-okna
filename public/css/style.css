@@ -23,6 +23,7 @@ textarea:focus {
 .no-padding {
   padding: 0 !important;
 }
+
 .form {
   /*margin-top: 2rem;*/
   padding: 2rem 5rem;
@@ -878,6 +879,29 @@ textarea:focus {
           transform: translateX(-50%);
   margin-top: 1rem;
   padding: 1rem 5rem;
+}
+.bg23 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.bg2 {
+  display: none;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  
+  width: 100%;
+  height: 100%;
+  z-index: 7;
+  background-color: rgba(0, 0, 0, 0.8);
+  
 }
 /*Media*/
 @media (max-width: 1400px) {
