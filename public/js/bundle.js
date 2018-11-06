@@ -459,13 +459,14 @@ function tabs() {
       //tabContent = document.querySelectorAll('.decoration_content >.row > .glazing_cold'),
   tabContent = document.querySelectorAll('.tabConten2'),
       internalLink = document.querySelectorAll('.decoration_item > div > a'),
-      noСlick = document.getElementsByClassName('no_click');
+      noСlick = document.getElementsByClassName('no_click'),
+      noClickA = document.querySelectorAll('.no_click > a');
 
   function hideContent(a) {
     for (var i = a; i < tabContent.length; i++) {
       tabContent[i].classList.remove('show');
       tabContent[i].classList.add('hide');
-      noСlick[i].classList.remove('after_click');
+      noСlick[i].classList.remove('after_click'); //internal_link
     }
   }
 
@@ -482,11 +483,19 @@ function tabs() {
   document.body.addEventListener('click', function (e) {
     var target = e.target;
 
-    if (target && target.classList.contains('decoration_item') || target.parentNode.classList.contains('decoration_item')) {
+    if (target && target.classList.contains('decoration_item') || target.parentNode.classList.contains('decoration_item') || target.classList.contains('atest')) {
       for (var i = 0; i < noСlick.length; i++) {
         if (target == noСlick[i]) {
           hideContent(0);
           showContent(i);
+          break;
+        }
+      }
+
+      for (var _i = 0; _i < noClickA.length; _i++) {
+        if (target == noClickA[_i]) {
+          hideContent(0);
+          showContent(_i);
           break;
         }
       }
