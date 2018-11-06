@@ -95,11 +95,11 @@ function tabs() {
       }
 
       } */
-      if (target.classList.contains('internal_link') || target.classList.contains('internal_link1')) {
+      if (target.classList.contains('internal_link') ) {
         hideContent(0, tabContent, noСlick);
         showContent(0, tabContent, noСlick);
       }
-      if (target.classList.contains('external_link') || (target.classList.contains('external_link'))) {
+      if (target.classList.contains('external_link') ) {
          hideContent(0, tabContent, noСlick);
          showContent(1, tabContent, noСlick);
       }
