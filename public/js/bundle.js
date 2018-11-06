@@ -483,14 +483,22 @@ function tabs() {
   }
 
   document.body.addEventListener('click', function (e) {
-    var target = e.target; //(target && target.classList.contains('decoration_item') || target.parentNode.classList.contains('decoration_item')
+    var target = e.target;
+
+    for (var i = 0; i < noСlick.length; i++) {
+      if (target == noСlick[i] || target == atest[i]) {
+        hideContent(0, tabContent, noСlick);
+        showContent(i, tabContent, noСlick);
+        break;
+      }
+    } //(target && target.classList.contains('decoration_item') || target.parentNode.classList.contains('decoration_item')
 
     /*       if (target && target.classList.contains('decoration_item') || target.parentNode.classList.contains('decoration_item') ) {
             
             console.log('ok1');
             for (let i = 0; i < noСlick.length; i++) {
     
-              if (target == noСlick[i] ) {
+              if (target == noСlick[i] ||  ) {
     
                 hideContent(0);
                 showContent(i);
@@ -499,14 +507,30 @@ function tabs() {
             }
     
           }
-          if (target == atest[2]) {
-            if (target == noСlick[2]) {
     
-              hideContent(0);
-              showContent(2);
-              break;
-            }
           } */
+
+
+    if (target.classList.contains('internal_link') || target.classList.contains('internal_link1')) {
+      hideContent(0, tabContent, noСlick);
+      showContent(0, tabContent, noСlick);
+    }
+
+    if (target.classList.contains('external_link') || target.classList.contains('external_link')) {
+      hideContent(0, tabContent, noСlick);
+      showContent(1, tabContent, noСlick);
+    }
+
+    if (target.classList.contains('rising_link')) {
+      hideContent(0, tabContent, noСlick);
+      showContent(2, tabContent, noСlick);
+    }
+
+    if (target.classList.contains('roof_link')) {
+      hideContent(0, tabContent, noСlick);
+      showContent(3, tabContent, noСlick);
+    } //ОСТЕКЛЕНИЕ БАЛКОНОВ И ЛОДЖИЙ
+
 
     if (target.classList.contains('internal_link')) {
       hideContent(0, tabContent, noСlick);
