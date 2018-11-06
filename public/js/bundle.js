@@ -100,6 +100,7 @@ window.addEventListener('DOMContentLoaded', function () {
   var modal = __webpack_require__(/*! ./parst/modal.js */ "./parst/modal.js"),
       form = __webpack_require__(/*! ./parst/form.js */ "./parst/form.js"),
       timer = __webpack_require__(/*! ./parst/timer.js */ "./parst/timer.js"),
+      calc = __webpack_require__(/*! ./parst/calc.js */ "./parst/calc.js"),
       tabs = __webpack_require__(/*! ./parst/tabs.js */ "./parst/tabs.js");
   /* 
   slider = require("./parst/slider.js"),
@@ -119,7 +120,31 @@ window.addEventListener('DOMContentLoaded', function () {
   modal();
   timer();
   tabs();
+  calc();
 });
+
+/***/ }),
+
+/***/ "./parst/calc.js":
+/*!***********************!*\
+  !*** ./parst/calc.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function tabs() {
+  var popupCalc = document.querySelector('.popup_calc');
+  document.body.addEventListener('click', function (e) {
+    var target = e.target; // 
+
+    if (target.classList.contains('popup_calc_btn')) {
+      console.log('popup_calc_btn');
+      popupCalc.style.display = 'block';
+    }
+  });
+}
+
+module.exports = tabs;
 
 /***/ }),
 
@@ -397,38 +422,74 @@ module.exports = modal;
 /***/ (function(module, exports) {
 
 function tabs() {
-  var tab = document.querySelectorAll('.glazing_slider'),
-      info = document.querySelector('.glazing_block'),
-      tabContent = document.querySelectorAll('.glazing_cold');
-
+  /* let tab = document.querySelectorAll('.internal_link'),
+    info = document.querySelector('.decoration_slider'),
+    tabContent = document.querySelectorAll('.glazing_cold');
   function hideTabContent(a) {
+    for (let i = a; i < tabContent.length; i++) {
+      tabContent[i].classList.remove('show');
+      tabContent[i].classList.add('hide');
+    }
+  }
+  //hideTabContent(1);
+  function showTabContent(b) {
+    tabContent[b].classList.remove('hide');
+    tabContent[b].classList.add('show');
+    if (tabContent[b].classList.contains('hide')) {
+      tabContent[b].classList.remove('hide');
+      tabContent[b].classList.add('show');
+      }
+  }
+  info.addEventListener('click', (event) => {
+    let target = event.target;
+    if (target && target.classList.contains('internal_link')) {
+      console.log(target);
+      for (let i = 0; i < tab.length; i++) {
+        if (target == tab[i]) {
+          hideTabContent(0);
+          showTabContent(i);
+          break;
+        }
+      }
+    }
+  });
+   */
+  var clickLink = document.querySelectorAll('.no_click_link'),
+      decorSlider = document.querySelectorAll('.decoration_slider'),
+      //tabContent = document.querySelectorAll('.decoration_content >.row > .glazing_cold'),
+  tabContent = document.querySelectorAll('.tabConten2'),
+      internalLink = document.querySelectorAll('.decoration_item > div > a'),
+      noСlick = document.getElementsByClassName('no_click');
+
+  function hideContent(a) {
     for (var i = a; i < tabContent.length; i++) {
-      console.log(tabContent[i]);
-      tabContent[i].style.display = "none";
+      tabContent[i].classList.remove('show');
+      tabContent[i].classList.add('hide');
+      noСlick[i].classList.remove('after_click');
     }
   }
 
-  hideTabContent(1);
+  hideContent(1);
 
-  function showTabContent(b) {
+  function showContent(b) {
     if (tabContent[b].classList.contains('hide')) {
-      console.log(tabContent[b]);
       tabContent[b].classList.remove('hide');
       tabContent[b].classList.add('show');
+      noСlick[b].classList.add('after_click');
     }
   }
 
   document.body.addEventListener('click', function (e) {
-    var target = e.target; //
+    var target = e.target;
 
-    if (target.classList.contains('external_link')) {
-      console.log('tab');
-      showTabContent(2);
-    }
-
-    if (target.classList.contains('internal_link')) {
-      console.log('tab1');
-      showTabContent(3);
+    if (target && target.classList.contains('decoration_item') || target.parentNode.classList.contains('decoration_item')) {
+      for (var i = 0; i < noСlick.length; i++) {
+        if (target == noСlick[i]) {
+          hideContent(0);
+          showContent(i);
+          break;
+        }
+      }
     }
   });
 }

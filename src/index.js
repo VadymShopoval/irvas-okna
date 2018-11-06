@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', function () {
   let modal = require("./parst/modal.js"),
       form = require("./parst/form.js"),
       timer = require("./parst/timer.js"),
+      calc = require("./parst/calc.js"),
       tabs = require("./parst/tabs.js");
     /* 
     slider = require("./parst/slider.js"),
@@ -23,6 +24,7 @@ window.addEventListener('DOMContentLoaded', function () {
   modal();
   timer();
   tabs();
+  calc();
  
     
  
