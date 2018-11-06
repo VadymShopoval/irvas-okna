@@ -438,7 +438,7 @@ function tabs() {
     if (tabContent[b].classList.contains('hide')) {
       tabContent[b].classList.remove('hide');
       tabContent[b].classList.add('show');
-      }
+    }
   }
   info.addEventListener('click', (event) => {
     let target = event.target;
@@ -497,17 +497,13 @@ function tabs() {
             
             console.log('ok1');
             for (let i = 0; i < noСlick.length; i++) {
-    
               if (target == noСlick[i] ||  ) {
-    
                 hideContent(0);
                 showContent(i);
                 break;
               }
             }
-    
           }
-    
           } */
 
 
@@ -552,7 +548,7 @@ function tabs() {
       showContent(3, tabContent, noСlick);
     }
     /* if (target && target.classList.contains('glazing_block') || target.parentNode.classList.contains('glazing_block') || target.classList.contains('atest')) {
-        console.log('ok')
+      console.log('ok')
      /*  for (let i = 0; i < glazTab.length; i++) {
         if (target == glazTab[i] || target.parentNode == glazTab[i]) {
           hideGlaz(0);
