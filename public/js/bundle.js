@@ -460,47 +460,102 @@ function tabs() {
   tabContent = document.querySelectorAll('.tabConten2'),
       internalLink = document.querySelectorAll('.decoration_item > div > a'),
       noСlick = document.getElementsByClassName('no_click'),
-      noClickA = document.querySelectorAll('.no_click > a');
+      noClickA = document.querySelectorAll('.no_click > a'),
+      atest = document.querySelectorAll('.atest');
 
-  function hideContent(a) {
+  function hideContent(a, listBlok, click) {
+    for (var i = a; i < listBlok.length; i++) {
+      listBlok[i].classList.remove('show');
+      listBlok[i].classList.add('hide');
+      click[i].classList.remove('after_click'); //internal_link
+    }
+  }
+
+  hideContent(1, tabContent, noСlick);
+
+  function showContent(b, listBlok, click) {
+    if (listBlok[b].classList.contains('hide')) {
+      listBlok[b].classList.remove('hide');
+      listBlok[b].classList.add('show');
+      click[b].classList.add('after_click');
+      console.log(click[b]);
+    }
+  }
+
+  document.body.addEventListener('click', function (e) {
+    var target = e.target; //(target && target.classList.contains('decoration_item') || target.parentNode.classList.contains('decoration_item')
+
+    /*       if (target && target.classList.contains('decoration_item') || target.parentNode.classList.contains('decoration_item') ) {
+            
+            console.log('ok1');
+            for (let i = 0; i < noСlick.length; i++) {
+    
+              if (target == noСlick[i] ) {
+    
+                hideContent(0);
+                showContent(i);
+                break;
+              }
+            }
+    
+          }
+          if (target == atest[2]) {
+            if (target == noСlick[2]) {
+    
+              hideContent(0);
+              showContent(2);
+              break;
+            }
+          } */
+
+    if (target.classList.contains('internal_link')) {
+      hideContent(0, tabContent, noСlick);
+      showContent(0, tabContent, noСlick);
+    }
+
+    if (target.classList.contains('external_link')) {
+      hideContent(0, tabContent, noСlick);
+      showContent(1, tabContent, noСlick);
+    }
+
+    if (target.classList.contains('rising_link')) {
+      hideContent(0, tabContent, noСlick);
+      showContent(2, tabContent, noСlick);
+    }
+
+    if (target.classList.contains('roof_link')) {
+      hideContent(0, tabContent, noСlick);
+      showContent(3, tabContent, noСlick);
+    }
+    /* if (target && target.classList.contains('glazing_block') || target.parentNode.classList.contains('glazing_block') || target.classList.contains('atest')) {
+        console.log('ok')
+     /*  for (let i = 0; i < glazTab.length; i++) {
+        if (target == glazTab[i] || target.parentNode == glazTab[i]) {
+          hideGlaz(0);
+          showGlaz(i);
+          break;
+        }
+      } */
+    //} */
+
+  });
+
+  function hideGlaz(a) {
     for (var i = a; i < tabContent.length; i++) {
       tabContent[i].classList.remove('show');
       tabContent[i].classList.add('hide');
       noСlick[i].classList.remove('after_click'); //internal_link
     }
-  }
+  } //hideGlazt(1);
 
-  hideContent(1);
 
-  function showContent(b) {
+  function showGlaz(b) {
     if (tabContent[b].classList.contains('hide')) {
       tabContent[b].classList.remove('hide');
       tabContent[b].classList.add('show');
       noСlick[b].classList.add('after_click');
     }
   }
-
-  document.body.addEventListener('click', function (e) {
-    var target = e.target;
-
-    if (target && target.classList.contains('decoration_item') || target.parentNode.classList.contains('decoration_item') || target.classList.contains('atest')) {
-      for (var i = 0; i < noСlick.length; i++) {
-        if (target == noСlick[i]) {
-          hideContent(0);
-          showContent(i);
-          break;
-        }
-      }
-
-      for (var _i = 0; _i < noClickA.length; _i++) {
-        if (target == noClickA[_i]) {
-          hideContent(0);
-          showContent(_i);
-          break;
-        }
-      }
-    }
-  });
 }
 
 module.exports = tabs;
