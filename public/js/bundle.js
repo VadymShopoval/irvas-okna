@@ -1,2 +1,791 @@
-!function(e){var t={};function n(o){if(t[o])return t[o].exports;var l=t[o]={i:o,l:!1,exports:{}};return e[o].call(l.exports,l,l.exports,n),l.l=!0,l.exports}n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var l in e)n.d(o,l,function(t){return e[t]}.bind(null,l));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){window.addEventListener("DOMContentLoaded",function(){"use strict";var e=n(1),t=n(2),o=n(3),l=n(4),c=n(5);t(),e(),o(),c(),l()})},function(e,t){e.exports=function(){var e=document.getElementsByClassName("popup_engineer")[0],t=(document.querySelector("body"),document.getElementsByTagName("strong")[1]),n=document.getElementsByTagName("strong")[0],o=document.querySelectorAll(".popup_engineer")[0],l=document.querySelector(".popup");function c(){div.style.display="block",bg23.style.display="block"}document.querySelector(".lupa"),bg23=document.querySelector(".bg23"),lupa0=document.querySelectorAll(".lupa")[0],popupDialog=document.querySelector(".popup_dialog"),imgclose=document.querySelector(".bg2"),div=document.createElement("div"),div.classList.add("bg2"),bg23.appendChild(div),document.body.addEventListener("click",function(r){var i=r.target;i.classList.contains("popup_engineer_btn")&&(e.style.display="block",document.body.style.overflow="hidden"),i.classList.contains("popup_engineer")&&(e.style.display="none",document.body.style.overflow=""),i.classList.contains("phone_link")&&(r.preventDefault(),document.body.style.overflow="hidden",l.style.display="block"),i.classList.contains("popup")&&(l.style.display="none",document.body.style.overflow="",e.style.display="none"),i!=n&&i!=t||(console.log(t),l.style.display="none",document.body.style.overflow="",o.style.display="none"),i.classList.contains("lupa1")&&(r.preventDefault(),console.log("lupa"),div.style.background="url(img/our_works/big_img/1.png) no-repeat",c()),i.classList.contains("lupa1")&&(r.preventDefault(),console.log("lupa"),div.style.background="url(img/our_works/big_img/1.png) no-repeat",c()),i.classList.contains("cl0")&&(r.preventDefault(),console.log("lupa"),div.style.background="url(img/our_works/big_img/1.png) no-repeat",c()),i.classList.contains("cl0")&&(r.preventDefault(),console.log("lupa"),div.style.background="url(img/our_works/big_img/1.png) no-repeat",c()),i.classList.contains("cl1")&&(r.preventDefault(),console.log("lupa"),div.style.background="url(img/our_works/big_img/2.png) no-repeat",c()),i.classList.contains("cl2")&&(r.preventDefault(),console.log("lupa"),div.style.background="url(img/our_works/big_img/3.png) no-repeat",c()),i.classList.contains("cl3")&&(r.preventDefault(),console.log("lupa"),div.style.background="url(img/our_works/big_img/4.png) no-repeat",c()),i.classList.contains("cl4")&&(r.preventDefault(),console.log("lupa"),div.style.background="url(img/our_works/big_img/5.png) no-repeat",c()),i.classList.contains("cl5")&&(r.preventDefault(),console.log("lupa"),div.style.background="url(img/our_works/big_img/6.png) no-repeat",c()),i.classList.contains("cl6")&&(r.preventDefault(),console.log("lupa"),div.style.background="url(img/our_works/big_img/7.png) no-repeat",c()),i.classList.contains("cl7")&&(r.preventDefault(),console.log("lupa"),div.style.background="url(img/our_works/big_img/8.png) no-repeat",c()),(i.classList.contains("bg23")||i.classList.contains("bg2"))&&(div.style.background="none",div.style.display="none",bg23.style.display="none")}),setTimeout(function(){l.style.display="block"},6e4)}},function(e,t){e.exports=function(){document.getElementById("form1"),document.getElementById("form2"),document.getElementById("form3"),document.getElementById("form4"),document.getElementById("form5"),document.getElementById("form6"),document.getElementById("form7"),document.getElementById("form8"),document.getElementById("form9"),document.getElementsByName("user_name"),document.getElementsByName("user_phone");var e=document.querySelector("body");e.addEventListener("input",function(e){var t=e.target;t.classList.contains("Phone")&&(t.value=t.value.replace(/[^0-9+]/gi,""))}),e.addEventListener("submit",function(e){e.preventDefault();var t=e.target;"form1"!=t.id&&"form3"!=t.id&&"form2"!=t.id&&"form4"!=t.id&&"form5"!=t.id&&"form6"!=t.id&&"form7"!=t.id&&"form8"!=t.id&&"form9"!=t.id||(console.log("ss"),function(e){var t="Загрузка....",n="Спасибо! Скоро мы с вами свяжемся!",o="Что-то пошло не так...",l=document.createElement("div");l.classList.add("status");var c=e.getElementsByTagName("input"),r=new XMLHttpRequest;r.open("POST","server.php"),r.setRequestHeader("Content-type","application/json; charset=utf-8");var i={};new FormData(e).forEach(function(e,t){i[t]=e});var s=JSON.stringify(i);r.send(s),e.appendChild(l),r.onreadystatechange=function(){r.readyState<4?l.innerHTML=t:4===r.readyState&&200===r.status?l.innerHTML=n:l.innerHTML=o};for(var a=0;a<c.length;a++)c[a].value=""}(t))})}},function(e,t){e.exports=function(){!function(e,t){var n=document.getElementById(e),o=n.querySelector(".day"),l=n.querySelector(".hours"),c=n.querySelector(".minutes"),r=n.querySelector(".seconds"),i=setInterval(function(){var e=function(e){var t=Date.parse(e)-Date.parse(new Date),n=Math.floor(t/1e3%60),o=Math.floor(t/1e3/60%60),l=Math.floor(t/36e5%24);return{day:Math.floor(t/864e5),total:t,hours:l,minutes:o,seconds:n}}(t);o.textContent=("0"+e.day).slice(-2),l.textContent=("0"+e.hours).slice(-2),c.textContent=("0"+e.minutes).slice(-2),r.textContent=("0"+e.seconds).slice(-2),e.total<=0&&(console.log("t.total<= 0"),clearInterval(i),o.textContent="00",l.textContent="00",c.textContent="00",r.textContent="00")},1e3)}("timer","2018-11-07")}},function(e,t){e.exports=function(){var e=document.querySelectorAll(".popup_calc_btn"),t=document.querySelector(".popup_calc"),n=document.querySelector(".popup_calc_profile"),o=document.querySelector(".popup_calc_end"),l=document.querySelector(".popup_calc_button"),c=document.querySelector(".popup_calc_profile_button"),r=document.querySelectorAll(".popup_calc_close"),i=[t,n,o],s=document.querySelectorAll(".balcon_icons > a > img"),a=document.querySelectorAll(".big_img > img"),u=document.querySelector(".cold"),d=document.querySelector(".warm"),p=document.querySelector(".form_calc"),m=new FormData,y=document.createElement("div"),f="Loading...",g="Мы скоро с вами свяжемся!",v="Произошла ошибка";function _(){document.querySelectorAll("input").forEach(function(e){e.value=""}),m=new FormData,setTimeout(function(){y.innerHTML=""},1e4)}e.forEach(function(e){e.addEventListener("click",function(){console.log("price btn"),t.style.display="block"})}),r.forEach(function(e){e.addEventListener("click",function(){i.forEach(function(e){setTimeout(function(){e.style.display="none"},980),_()})})}),s.forEach(function(e,t){e.addEventListener("click",function(e){e.preventDefault(),s.forEach(function(e){e.style.width="20%",e.classList.remove("choosen")}),a.forEach(function(e){e.style.display="none"}),e.target.style.width="30%",e.target.classList.add("choosen"),a[t].style.display="inline-block"})}),l.addEventListener("click",function(){var e=document.querySelector("#width").value,o=document.querySelector("#height").value,l=document.querySelector(".choosen");""==e||""==o||null==l||"0"==e||"0"==o?alert("Введите высоту и ширину, выбирите форму балкона"):(m.append("form",l.alt),m.append("width",e),m.append("height",o),t.style.display="none",n.style.display="block")}),u.addEventListener("click",function(){d.checked=!1}),d.addEventListener("click",function(){u.checked=!1}),c.addEventListener("click",function(){var e=document.querySelector("#view_type").value;d.checked||u.checked?(u.checked?m.append("profile_type","cold"):m.append("profile_type","warm"),m.append("view_type",e),n.style.display="none",o.style.display="block"):alert("Выберите тип профиля для рассчета.")}),p.addEventListener("submit",function(e){e.preventDefault();var t=document.querySelector("#calc_user_name").value,n=document.querySelector("#calc_phone").value;m.append("name",t),m.append("phone",n),p.appendChild(y),function(e){return new Promise(function(t,n){var o=new XMLHttpRequest;o.open("POST","server.php"),o.setRequestHeader("Content-Type","application/json; charset=utf-8"),o.onreadystatechange=function(){o.readyState<4?t():4===o.readyState?200==o.status&&o.status<300&&t():n()},o.send(e)})}(m).then(function(){return y.innerHTML=f}).then(function(){return y.innerHTML=g}).catch(function(){return y.innerHTML=v}).then(_)})}},function(e,t){e.exports=function(){document.querySelectorAll(".no_click_link"),document.querySelectorAll(".decoration_slider");var e=document.querySelectorAll(".tabConten2"),t=(document.querySelectorAll(".decoration_item > div > a"),document.getElementsByClassName("no_click")),n=(document.querySelectorAll(".no_click > a"),document.querySelectorAll(".atest"));function o(e,t,n){for(var o=e;o<t.length;o++)t[o].classList.remove("show"),t[o].classList.add("hide"),n[o].classList.remove("after_click"),n[o].classList.remove("active")}function l(e,t,n){t[e].classList.contains("hide")&&(t[e].classList.remove("hide"),t[e].classList.add("show"),n[e].classList.add("after_click"),n[e].classList.add("active"),console.log(n[e]))}o(1,e,t),document.querySelectorAll(".glazing_block");var c=document.querySelectorAll(".link-tab"),r=document.querySelectorAll(".tabConten1");o(1,r,c),document.body.addEventListener("click",function(i){for(var s=i.target,a=0;a<t.length;a++)if(s==t[a]||s==n[a]){o(0,e,t),l(a,e,t);break}s.classList.contains("internal_link")&&(o(0,e,t),l(0,e,t)),s.classList.contains("external_link")&&(o(0,e,t),l(1,e,t)),s.classList.contains("rising_link")&&(o(0,e,t),l(2,e,t)),s.classList.contains("roof_link")&&(o(0,e,t),l(3,e,t)),s.classList.contains("tree_link")&&(console.log("s"),o(0,r,c),l(0,r,c)),s.classList.contains("aluminum_link")&&(o(0,r,c),l(1,r,c)),s.classList.contains("plastic_link")&&(o(0,r,c),l(2,r,c)),s.classList.contains("french_link")&&(o(0,r,c),l(3,r,c)),s.classList.contains("rise_link")&&(o(0,r,c),l(4,r,c))})}}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./index.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./index.js":
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+//window.addEventListener('load')
+window.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+
+  var modal = __webpack_require__(/*! ./parst/modal.js */ "./parst/modal.js"),
+      form = __webpack_require__(/*! ./parst/form.js */ "./parst/form.js"),
+      timer = __webpack_require__(/*! ./parst/timer.js */ "./parst/timer.js"),
+      calc = __webpack_require__(/*! ./parst/calc.js */ "./parst/calc.js"),
+      tabs = __webpack_require__(/*! ./parst/tabs.js */ "./parst/tabs.js"); //tabsglazing = require('./parst/tabsglazing.js');
+
+  /* 
+  slider = require("./parst/slider.js"),
+  
+  timer  = require("./parst/timer.js"),
+  calc   = require("./parst/calc.js"); */
+
+  /* form();
+  
+  slider();
+  
+  
+  calc();  */
+
+
+  form();
+  modal();
+  timer();
+  tabs();
+  calc(); //tabsglazing();
+});
+
+/***/ }),
+
+/***/ "./parst/calc.js":
+/*!***********************!*\
+  !*** ./parst/calc.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function calc() {
+  var priceButtons = document.querySelectorAll(".popup_calc_btn"),
+      calc = document.querySelector(".popup_calc"),
+      calcProfile = document.querySelector(".popup_calc_profile"),
+      calcEnd = document.querySelector(".popup_calc_end"),
+      calcNextBtn = document.querySelector(".popup_calc_button"),
+      calcProfileNextBtn = document.querySelector(".popup_calc_profile_button"),
+      close = document.querySelectorAll(".popup_calc_close"),
+      popups = [calc, calcProfile, calcEnd],
+      balconIcons = document.querySelectorAll(".balcon_icons > a > img"),
+      balconBig = document.querySelectorAll(".big_img > img"),
+      coldBox = document.querySelector(".cold"),
+      warmBox = document.querySelector(".warm"),
+      form = document.querySelector(".form_calc"),
+      formData = new FormData(),
+      statusMessage = document.createElement("div"),
+      message = {
+    loading: "Loading...",
+    success: "Мы скоро с вами свяжемся!",
+    failure: "Произошла ошибка"
+  };
+  priceButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      console.log('price btn');
+      calc.style.display = "block";
+    });
+  });
+  close.forEach(function (x) {
+    x.addEventListener("click", function () {
+      popups.forEach(function (item) {
+        setTimeout(function () {
+          item.style.display = "none";
+        }, 980);
+        clearInputs();
+      });
+    });
+  });
+  balconIcons.forEach(function (icon, index) {
+    icon.addEventListener("click", function (event) {
+      event.preventDefault();
+      balconIcons.forEach(function (icon) {
+        icon.style.width = "20%";
+        icon.classList.remove("choosen");
+      });
+      balconBig.forEach(function (img) {
+        img.style.display = "none";
+      });
+      event.target.style.width = "30%";
+      event.target.classList.add("choosen");
+      balconBig[index].style.display = "inline-block";
+    });
+  });
+  calcNextBtn.addEventListener("click", function () {
+    var width = document.querySelector("#width").value,
+        height = document.querySelector("#height").value,
+        type = document.querySelector(".choosen");
+
+    if (width == "" || height == "" || type == null || width == "0" || height == "0") {
+      alert("Введите высоту и ширину, выбирите форму балкона");
+    } else {
+      formData.append("form", type.alt);
+      formData.append("width", width);
+      formData.append("height", height);
+      calc.style.display = "none";
+      calcProfile.style.display = "block";
+    }
+  });
+  coldBox.addEventListener("click", function () {
+    warmBox.checked = false;
+  });
+  warmBox.addEventListener("click", function () {
+    coldBox.checked = false;
+  });
+  calcProfileNextBtn.addEventListener("click", function () {
+    var viewType = document.querySelector("#view_type").value;
+
+    if (!warmBox.checked && !coldBox.checked) {
+      alert("Выберите тип профиля для рассчета.");
+    } else {
+      if (coldBox.checked) {
+        formData.append("profile_type", "cold");
+      } else {
+        formData.append("profile_type", "warm");
+      }
+
+      formData.append("view_type", viewType);
+      calcProfile.style.display = "none";
+      calcEnd.style.display = "block";
+    }
+  });
+
+  function clearInputs() {
+    var inputs = document.querySelectorAll("input");
+    inputs.forEach(function (input) {
+      input.value = "";
+    });
+    formData = new FormData();
+    setTimeout(function () {
+      statusMessage.innerHTML = "";
+    }, 10000);
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var name = document.querySelector("#calc_user_name").value,
+        phone = document.querySelector("#calc_phone").value;
+    formData.append("name", name);
+    formData.append("phone", phone);
+    form.appendChild(statusMessage);
+
+    function postData(data) {
+      return new Promise(function (resolve, reject) {
+        var request = new XMLHttpRequest();
+        request.open("POST", "server.php");
+        request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+
+        request.onreadystatechange = function () {
+          if (request.readyState < 4) {
+            resolve();
+          } else if (request.readyState === 4) {
+            if (request.status == 200 && request.status < 300) {
+              resolve();
+            }
+          } else {
+            reject();
+          }
+        };
+
+        request.send(data);
+      });
+    }
+
+    postData(formData).then(function () {
+      return statusMessage.innerHTML = message.loading;
+    }).then(function () {
+      return statusMessage.innerHTML = message.success;
+    }).catch(function () {
+      return statusMessage.innerHTML = message.failure;
+    }).then(clearInputs);
+  });
+}
+
+module.exports = calc;
+
+/***/ }),
+
+/***/ "./parst/form.js":
+/*!***********************!*\
+  !*** ./parst/form.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function form() {
+  var form1 = document.getElementById('form1'),
+      form2 = document.getElementById('form2'),
+      form3 = document.getElementById('form3'),
+      form4 = document.getElementById('form4'),
+      form5 = document.getElementById('form5'),
+      form6 = document.getElementById('form6'),
+      form7 = document.getElementById('form7'),
+      form8 = document.getElementById('form8'),
+      form9 = document.getElementById('form9'),
+      inputName = document.getElementsByName('user_name'),
+      inputPhone = document.getElementsByName('user_phone');
+  /* inputPhone.addEventListener('input', () => {
+    for (let i = 0; i < inputPhone.length; i++) {
+      
+      inputPhone[i].value = inputPhone[i].value.replace(/[^0-9+]/ig, '');
+    }
+  }); */
+
+  var sendRequest = function sendRequest(target) {
+    var message = {
+      loading: "Загрузка....",
+      success: "Спасибо! Скоро мы с вами свяжемся!",
+      failure: "Что-то пошло не так..."
+    },
+        statusMessage = document.createElement('div');
+    statusMessage.classList.add('status');
+    var input = target.getElementsByTagName('input'),
+        request = new XMLHttpRequest();
+    request.open('POST', 'server.php');
+    request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    var formData = new FormData(target),
+        obj = {};
+    formData.forEach(function (value, key) {
+      obj[key] = value;
+    });
+    var json = JSON.stringify(obj);
+    request.send(json);
+    target.appendChild(statusMessage);
+
+    request.onreadystatechange = function () {
+      if (request.readyState < 4) {
+        statusMessage.innerHTML = message.loading;
+      } else if (request.readyState === 4 && request.status === 200) {
+        statusMessage.innerHTML = message.success;
+      } else {
+        statusMessage.innerHTML = message.failure;
+      }
+    };
+
+    for (var i = 0; i < input.length; i++) {
+      input[i].value = '';
+    }
+  };
+
+  var body = document.querySelector('body');
+  body.addEventListener('input', function (e) {
+    var target = e.target;
+
+    if (target.classList.contains('Phone')) {
+      //console.log('inputPhone');
+      target.value = target.value.replace(/[^0-9+]/ig, '');
+    }
+  });
+  body.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var target = e.target;
+
+    if (target.id == 'form1' || target.id == 'form3' || target.id == 'form2' || target.id == 'form4' || target.id == 'form5' || target.id == 'form6' || target.id == 'form7' || target.id == 'form8' || target.id == 'form9') {
+      console.log('ss');
+      sendRequest(target);
+    }
+  });
+}
+
+module.exports = form;
+
+/***/ }),
+
+/***/ "./parst/modal.js":
+/*!************************!*\
+  !*** ./parst/modal.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function modal() {
+  //model
+  var popupEngineer = document.getElementsByClassName('popup_engineer')[0],
+      body = document.querySelector('body'),
+      bntclose = document.getElementsByTagName('strong')[1],
+      bntclose0 = document.getElementsByTagName('strong')[0],
+      btn = document.querySelectorAll('.popup_engineer')[0],
+      popup = document.querySelector('.popup'),
+      lupa = document.querySelector('.lupa');
+  bg23 = document.querySelector('.bg23');
+  lupa0 = document.querySelectorAll('.lupa')[0], popupDialog = document.querySelector('.popup_dialog'), imgclose = document.querySelector('.bg2'), div = document.createElement('div');
+  div.classList.add('bg2');
+  bg23.appendChild(div);
+  document.body.addEventListener('click', function (e) {
+    var target = e.target; // popup_engineer_btn
+
+    if (target.classList.contains('popup_engineer_btn')) {
+      popupEngineer.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    if (target.classList.contains('popup_engineer')) {
+      popupEngineer.style.display = 'none';
+      document.body.style.overflow = '';
+    } // popup
+
+
+    if (target.classList.contains('phone_link')) {
+      e.preventDefault();
+      document.body.style.overflow = 'hidden';
+      popup.style.display = 'block';
+    }
+
+    if (target.classList.contains('popup')) {
+      popup.style.display = 'none';
+      document.body.style.overflow = '';
+      popupEngineer.style.display = 'none';
+    }
+
+    if (target == bntclose0 || target == bntclose) {
+      console.log(bntclose);
+      popup.style.display = 'none';
+      document.body.style.overflow = '';
+      btn.style.display = "none";
+    } //lupaclass="lupa1"
+
+
+    var blockID;
+
+    if (target.classList.contains('lupa1')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/1.png) no-repeat";
+      /*  blockID =target.getAttribute('src');
+       addBg(blockID);
+       console.log(blockID);
+       div.style.cssText = ` background: url(${blockID})`;
+       console.log(div); */
+
+      addBg();
+    }
+
+    if (target.classList.contains('lupa1')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/1.png) no-repeat";
+      /*  blockID =target.getAttribute('src');
+       addBg(blockID);
+       console.log(blockID);
+       div.style.cssText = ` background: url(${blockID})`;
+       console.log(div); */
+
+      addBg();
+    }
+
+    if (target.classList.contains('cl0')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/1.png) no-repeat";
+      /*  blockID =target.getAttribute('src');
+       addBg(blockID);
+       console.log(blockID);
+       div.style.cssText = ` background: url(${blockID})`;
+       console.log(div); */
+
+      addBg();
+    }
+
+    if (target.classList.contains('cl0')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/1.png) no-repeat";
+      addBg();
+    }
+
+    if (target.classList.contains('cl1')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/2.png) no-repeat";
+      addBg();
+    }
+
+    if (target.classList.contains('cl2')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/3.png) no-repeat";
+      addBg();
+    }
+
+    if (target.classList.contains('cl3')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/4.png) no-repeat";
+      addBg();
+    }
+
+    if (target.classList.contains('cl4')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/5.png) no-repeat";
+      addBg();
+    }
+
+    if (target.classList.contains('cl5')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/6.png) no-repeat";
+      addBg();
+    }
+
+    if (target.classList.contains('cl6')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/7.png) no-repeat";
+      addBg();
+    }
+
+    if (target.classList.contains('cl7')) {
+      e.preventDefault();
+      console.log('lupa');
+      div.style.background = "url(img/our_works/big_img/8.png) no-repeat";
+      addBg();
+    }
+
+    if (target.classList.contains('bg23') || target.classList.contains('bg2')) {
+      noneBg();
+    }
+  });
+
+  function addBg() {
+    // 
+    div.style.display = 'block';
+    bg23.style.display = 'block';
+  }
+
+  function noneBg() {
+    div.style.background = "none";
+    div.style.display = 'none';
+    bg23.style.display = 'none';
+  } //60sec
+
+
+  function func() {
+    popup.style.display = 'block';
+  }
+
+  setTimeout(func, 60000);
+}
+
+module.exports = modal;
+
+/***/ }),
+
+/***/ "./parst/tabs.js":
+/*!***********************!*\
+  !*** ./parst/tabs.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function tabs() {
+  /* let tab = document.querySelectorAll('.internal_link'),
+    info = document.querySelector('.decoration_slider'),
+    tabContent = document.querySelectorAll('.glazing_cold');
+  function hideTabContent(a) {
+    for (let i = a; i < tabContent.length; i++) {
+      tabContent[i].classList.remove('show');
+      tabContent[i].classList.add('hide');
+    }
+  }
+  //hideTabContent(1);
+  function showTabContent(b) {
+    tabContent[b].classList.remove('hide');
+    tabContent[b].classList.add('show');
+    if (tabContent[b].classList.contains('hide')) {
+      tabContent[b].classList.remove('hide');
+      tabContent[b].classList.add('show');
+    }
+  }
+  info.addEventListener('click', (event) => {
+    let target = event.target;
+    if (target && target.classList.contains('internal_link')) {
+      console.log(target);
+      for (let i = 0; i < tab.length; i++) {
+        if (target == tab[i]) {
+          hideTabContent(0);
+          showTabContent(i);
+          break;
+        }
+      }
+    }
+  });
+   */
+  var clickLink = document.querySelectorAll('.no_click_link'),
+      decorSlider = document.querySelectorAll('.decoration_slider'),
+      //tabContent = document.querySelectorAll('.decoration_content >.row > .glazing_cold'),
+  tabContent = document.querySelectorAll('.tabConten2'),
+      internalLink = document.querySelectorAll('.decoration_item > div > a'),
+      noСlick = document.getElementsByClassName('no_click'),
+      noClickA = document.querySelectorAll('.no_click > a'),
+      atest = document.querySelectorAll('.atest');
+
+  function hideContent(a, listBlok, click) {
+    for (var i = a; i < listBlok.length; i++) {
+      listBlok[i].classList.remove('show');
+      listBlok[i].classList.add('hide');
+      click[i].classList.remove('after_click');
+      click[i].classList.remove('active'); //internal_link
+    }
+  }
+
+  hideContent(1, tabContent, noСlick);
+
+  function showContent(b, listBlok, click) {
+    if (listBlok[b].classList.contains('hide')) {
+      listBlok[b].classList.remove('hide');
+      listBlok[b].classList.add('show');
+      click[b].classList.add('after_click');
+      click[b].classList.add('active');
+      console.log(click[b]);
+    }
+  }
+
+  var glazTab = document.querySelectorAll('.glazing_block'),
+      glazLink = document.querySelectorAll('.link-tab'),
+      glazContent = document.querySelectorAll('.tabConten1');
+
+  function hideGlaz(h) {
+    for (var i = h; i < glazContent.length; i++) {
+      glazContent[i].classList.remove('show');
+      glazContent[i].classList.add('hide');
+      glazLink[i].classList.remove('active');
+    }
+  } //hideGlaz(1);
+
+
+  function showGlaz(s) {
+    if (glazContent[s].classList.contains('hide')) {
+      glazContent[s].classList.remove('hide');
+      glazContent[s].classList.add('show');
+      glazLink[s].classList.add('active');
+    }
+  }
+
+  hideContent(1, glazContent, glazLink);
+  document.body.addEventListener('click', function (e) {
+    var target = e.target;
+
+    for (var i = 0; i < noСlick.length; i++) {
+      if (target == noСlick[i] || target == atest[i]) {
+        hideContent(0, tabContent, noСlick);
+        showContent(i, tabContent, noСlick);
+        break;
+      }
+    } //(target && target.classList.contains('decoration_item') || target.parentNode.classList.contains('decoration_item')
+
+    /*       if (target && target.classList.contains('decoration_item') || target.parentNode.classList.contains('decoration_item') ) {
+            
+            console.log('ok1');
+            for (let i = 0; i < noСlick.length; i++) {
+              if (target == noСlick[i] ||  ) {
+                hideContent(0);
+                showContent(i);
+                break;
+              }
+            }
+          }
+          } */
+
+
+    if (target.classList.contains('internal_link')) {
+      hideContent(0, tabContent, noСlick);
+      showContent(0, tabContent, noСlick);
+    }
+
+    if (target.classList.contains('external_link')) {
+      hideContent(0, tabContent, noСlick);
+      showContent(1, tabContent, noСlick);
+    }
+
+    if (target.classList.contains('rising_link')) {
+      hideContent(0, tabContent, noСlick);
+      showContent(2, tabContent, noСlick);
+    }
+
+    if (target.classList.contains('roof_link')) {
+      hideContent(0, tabContent, noСlick);
+      showContent(3, tabContent, noСlick);
+    } //ОСТЕКЛЕНИЕ БАЛКОНОВ И ЛОДЖИЙ
+
+
+    if (target.classList.contains('tree_link')) {
+      console.log('s');
+      hideContent(0, glazContent, glazLink);
+      showContent(0, glazContent, glazLink);
+    }
+
+    if (target.classList.contains('aluminum_link')) {
+      hideContent(0, glazContent, glazLink);
+      showContent(1, glazContent, glazLink);
+    }
+
+    if (target.classList.contains('plastic_link')) {
+      hideContent(0, glazContent, glazLink);
+      showContent(2, glazContent, glazLink);
+    }
+
+    if (target.classList.contains('french_link')) {
+      hideContent(0, glazContent, glazLink);
+      showContent(3, glazContent, glazLink);
+    }
+
+    if (target.classList.contains('rise_link')) {
+      hideContent(0, glazContent, glazLink);
+      showContent(4, glazContent, glazLink);
+    }
+    /* if (target && target.classList.contains('glazing_block') || target.parentNode.classList.contains('glazing_block') || target.classList.contains('atest')) {
+      console.log('ok')
+     /*  for (let i = 0; i < glazTab.length; i++) {
+        if (target == glazTab[i] || target.parentNode == glazTab[i]) {
+          hideGlaz(0);
+          showGlaz(i);
+          break;
+        }
+      } */
+    //} */
+
+  });
+}
+
+module.exports = tabs;
+
+/***/ }),
+
+/***/ "./parst/timer.js":
+/*!************************!*\
+  !*** ./parst/timer.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function timer() {
+  //timer
+  var deadline = '2019-07-04';
+
+  function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date()),
+        // Math.floor округля
+    seconds = Math.floor(t / 1000 % 60),
+        minutes = Math.floor(t / 1000 / 60 % 60),
+        //hours = Math.floor((t / (1000 * 60 * 60))),
+    hours = Math.floor(t / (1000 * 60 * 60) % 24),
+        d = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+      'day': d,
+      'total': t,
+      'hours': hours,
+      'minutes': minutes,
+      'seconds': seconds
+    };
+  }
+
+  function setClock(id, endtime) {
+    var timer = document.getElementById(id),
+        day = timer.querySelector('.day'),
+        hours = timer.querySelector('.hours'),
+        minutes = timer.querySelector('.minutes'),
+        seconds = timer.querySelector('.seconds'),
+        timeInterval = setInterval(updateClock, 1000);
+
+    function updateClock() {
+      var t = getTimeRemaining(endtime);
+      day.textContent = ('0' + t.day).slice(-2);
+      hours.textContent = ('0' + t.hours).slice(-2);
+      minutes.textContent = ('0' + t.minutes).slice(-2);
+      seconds.textContent = ('0' + t.seconds).slice(-2);
+
+      if (t.total <= 0) {
+        console.log('t.total<= 0');
+        clearInterval(timeInterval);
+        day.textContent = '00';
+        hours.textContent = '00';
+        minutes.textContent = '00';
+        seconds.textContent = '00';
+      }
+    }
+  }
+
+  setClock('timer', deadline);
+}
+
+module.exports = timer;
+
+/***/ })
+
+/******/ });
 //# sourceMappingURL=bundle.js.map
