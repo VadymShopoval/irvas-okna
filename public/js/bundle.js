@@ -101,7 +101,8 @@ window.addEventListener('DOMContentLoaded', function () {
       form = __webpack_require__(/*! ./parst/form.js */ "./parst/form.js"),
       timer = __webpack_require__(/*! ./parst/timer.js */ "./parst/timer.js"),
       calc = __webpack_require__(/*! ./parst/calc.js */ "./parst/calc.js"),
-      tabs = __webpack_require__(/*! ./parst/tabs.js */ "./parst/tabs.js");
+      tabs = __webpack_require__(/*! ./parst/tabs.js */ "./parst/tabs.js"); //tabsglazing = require('./parst/tabsglazing.js');
+
   /* 
   slider = require("./parst/slider.js"),
   
@@ -120,7 +121,7 @@ window.addEventListener('DOMContentLoaded', function () {
   modal();
   timer();
   tabs();
-  calc();
+  calc(); //tabsglazing();
 });
 
 /***/ }),
@@ -132,7 +133,7 @@ window.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function tabs() {
+function calc() {
   var popupCalc = document.querySelector('.popup_calc');
   document.body.addEventListener('click', function (e) {
     var target = e.target; // 
@@ -144,7 +145,7 @@ function tabs() {
   });
 }
 
-module.exports = tabs;
+module.exports = calc;
 
 /***/ }),
 
@@ -467,7 +468,8 @@ function tabs() {
     for (var i = a; i < listBlok.length; i++) {
       listBlok[i].classList.remove('show');
       listBlok[i].classList.add('hide');
-      click[i].classList.remove('after_click'); //internal_link
+      click[i].classList.remove('after_click');
+      click[i].classList.remove('active'); //internal_link
     }
   }
 
@@ -478,10 +480,33 @@ function tabs() {
       listBlok[b].classList.remove('hide');
       listBlok[b].classList.add('show');
       click[b].classList.add('after_click');
+      click[b].classList.add('active');
       console.log(click[b]);
     }
   }
 
+  var glazTab = document.querySelectorAll('.glazing_block'),
+      glazLink = document.querySelectorAll('.link-tab'),
+      glazContent = document.querySelectorAll('.tabConten1');
+
+  function hideGlaz(h) {
+    for (var i = h; i < glazContent.length; i++) {
+      glazContent[i].classList.remove('show');
+      glazContent[i].classList.add('hide');
+      glazLink[i].classList.remove('active');
+    }
+  } //hideGlaz(1);
+
+
+  function showGlaz(s) {
+    if (glazContent[s].classList.contains('hide')) {
+      glazContent[s].classList.remove('hide');
+      glazContent[s].classList.add('show');
+      glazLink[s].classList.add('active');
+    }
+  }
+
+  hideContent(1, glazContent, glazLink);
   document.body.addEventListener('click', function (e) {
     var target = e.target;
 
@@ -528,24 +553,30 @@ function tabs() {
     } //ОСТЕКЛЕНИЕ БАЛКОНОВ И ЛОДЖИЙ
 
 
-    if (target.classList.contains('internal_link')) {
-      hideContent(0, tabContent, noСlick);
-      showContent(0, tabContent, noСlick);
+    if (target.classList.contains('tree_link')) {
+      console.log('s');
+      hideContent(0, glazContent, glazLink);
+      showContent(0, glazContent, glazLink);
     }
 
-    if (target.classList.contains('external_link')) {
-      hideContent(0, tabContent, noСlick);
-      showContent(1, tabContent, noСlick);
+    if (target.classList.contains('aluminum_link')) {
+      hideContent(0, glazContent, glazLink);
+      showContent(1, glazContent, glazLink);
     }
 
-    if (target.classList.contains('rising_link')) {
-      hideContent(0, tabContent, noСlick);
-      showContent(2, tabContent, noСlick);
+    if (target.classList.contains('plastic_link')) {
+      hideContent(0, glazContent, glazLink);
+      showContent(2, glazContent, glazLink);
     }
 
-    if (target.classList.contains('roof_link')) {
-      hideContent(0, tabContent, noСlick);
-      showContent(3, tabContent, noСlick);
+    if (target.classList.contains('french_link')) {
+      hideContent(0, glazContent, glazLink);
+      showContent(3, glazContent, glazLink);
+    }
+
+    if (target.classList.contains('rise_link')) {
+      hideContent(0, glazContent, glazLink);
+      showContent(4, glazContent, glazLink);
     }
     /* if (target && target.classList.contains('glazing_block') || target.parentNode.classList.contains('glazing_block') || target.classList.contains('atest')) {
       console.log('ok')
@@ -559,23 +590,6 @@ function tabs() {
     //} */
 
   });
-
-  function hideGlaz(a) {
-    for (var i = a; i < tabContent.length; i++) {
-      tabContent[i].classList.remove('show');
-      tabContent[i].classList.add('hide');
-      noСlick[i].classList.remove('after_click'); //internal_link
-    }
-  } //hideGlazt(1);
-
-
-  function showGlaz(b) {
-    if (tabContent[b].classList.contains('hide')) {
-      tabContent[b].classList.remove('hide');
-      tabContent[b].classList.add('show');
-      noСlick[b].classList.add('after_click');
-    }
-  }
 }
 
 module.exports = tabs;

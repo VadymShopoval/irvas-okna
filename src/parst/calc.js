@@ -1,4 +1,4 @@
-function tabs() {
+function calc() {
   let popupCalc = document.querySelector('.popup_calc');
   document.body.addEventListener('click', function (e) {
     let target = e.target;
@@ -9,4 +9,4 @@ function tabs() {
     }
   })
 }
-module.exports = tabs;
+module.exports = calc;

@@ -6,6 +6,7 @@ window.addEventListener('DOMContentLoaded', function () {
       timer = require("./parst/timer.js"),
       calc = require("./parst/calc.js"),
       tabs = require("./parst/tabs.js");
+      //tabsglazing = require('./parst/tabsglazing.js');
     /* 
     slider = require("./parst/slider.js"),
     
@@ -25,6 +26,7 @@ window.addEventListener('DOMContentLoaded', function () {
   timer();
   tabs();
   calc();
+  //tabsglazing();
  
     
  
