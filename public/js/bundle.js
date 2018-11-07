@@ -735,7 +735,7 @@ module.exports = tabs;
 
 function timer() {
   //timer
-  var deadline = '2019-07-04';
+  var deadline = '2019-7-4';
 
   function getTimeRemaining(endtime) {
     var t = Date.parse(endtime) - Date.parse(new Date()),
@@ -745,6 +745,7 @@ function timer() {
         //hours = Math.floor((t / (1000 * 60 * 60))),
     hours = Math.floor(t / (1000 * 60 * 60) % 24),
         d = Math.floor(t / (1000 * 60 * 60 * 24));
+    console.log(d);
     return {
       'day': d,
       'total': t,
@@ -764,7 +765,7 @@ function timer() {
 
     function updateClock() {
       var t = getTimeRemaining(endtime);
-      day.textContent = ('0' + t.day).slice(-2);
+      day.textContent = t.day;
       hours.textContent = ('0' + t.hours).slice(-2);
       minutes.textContent = ('0' + t.minutes).slice(-2);
       seconds.textContent = ('0' + t.seconds).slice(-2);
